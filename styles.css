@@ -1,0 +1,76 @@
+/* CSS Reset */
+
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+body{
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg{
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select{
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6{
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+#root, #__next{
+    isolation: isolate;
+}
+
+/* End CSS Reset */
+
+*{border: 1px solid black;}
+html{
+    height: 100vh
+}
+
+body{
+    margin: 0;
+    display: grid;
+    height: 100%;
+    grid-template-rows: 150px 1fr 24px;
+    grid-template-columns:180px 1fr;
+}
+
+.header{
+    grid-area: 1/1/2/3;
+    background-color:aquamarine
+}
+
+.sidebar{
+    grid-area: 2/1/3/2;
+    background-color: cadetblue;
+}
+.content{
+    grid-area: 2/2/3/3;
+    background-color: rosybrown;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+.footer{
+    grid-area: 3/1/4/3;
+    text-align: center;
+    text-justify: center;
+    background-color: salmon;
+}
+.footer>p{
+    font-size: 14px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#bookList{
+    margin: 40px;
+    width: 75%
+}
