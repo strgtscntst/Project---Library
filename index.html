@@ -14,13 +14,29 @@
 
     </div>
     <div class="content">
-        <table id="bookList">
-            <tr>
-                <th>Book Name</th>
-                <th>Author</th>
-                <th>Pages</th>
-            </tr>
+        <table >
+            <thead>
+                <tr>
+                    <th>Book Name</th>
+                    <th>Author</th>
+                    <th>Pages</th>
+                </tr>
+            </thead>
+            <tbody id="bookList">
+
+            </tbody>
         </table>
+        <form>
+            <fieldset class="inputs">
+                <legend>Add New Book?</legend>
+                <input id="nameField" type="text" placeholder="Book Name">
+                <input id="authorField" type="text" placeholder="Author">
+                <input id="pagesField" type="number" placeholder="# Pages">
+                <button id="addBookButton" type="button">Add Book</button>
+                
+            </fieldset>
+            <p id="itemsRequired">*All fields required</p>
+        </form>
     </div>
     <div class="footer">
         <p>Copyright Howard W Wilkins</p>

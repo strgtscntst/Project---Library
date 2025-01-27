@@ -29,9 +29,11 @@ p, h1, h2, h3, h4, h5, h6{
 
 /* End CSS Reset */
 
-*{border: 1px solid black;}
+/* *{border: 1px solid black;} */
+
 html{
-    height: 100vh
+    height: 100vh;
+    font-family: system-ui;
 }
 
 body{
@@ -53,10 +55,11 @@ body{
 }
 .content{
     grid-area: 2/2/3/3;
-    background-color: rosybrown;
+    background-color: rgb(230, 131, 131);
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
 .footer{
     grid-area: 3/1/4/3;
@@ -70,7 +73,68 @@ body{
     margin-bottom: auto;
 }
 
-#bookList{
+table{
     margin: 40px;
     width: 75%
+}
+
+th{
+    text-align: left;
+    font-size: 110%;
+    font-weight: bold;
+}
+
+form{
+    width: 100%;
+}
+legend{
+    text-align: center;
+    padding: 0 20px;
+    border: 2px solid rgb(255, 200, 200);
+    border-radius: 0.6em;
+    font-family: system-ui;
+}
+.inputs{
+    border: 2px solid rgb(255, 200, 200);
+    border-radius: 1.2em;
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+input{
+    margin: 20px;
+    border: none;
+    border-radius: 0.25em;
+    padding-left: 8px;
+}
+
+input:focus{
+    outline: 2px solid rgb(15, 1, 146);
+}
+
+#pagesField{
+    max-width: 90px;
+
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+#addBookButton{
+    color: white;
+    background-color: rgb(255, 159, 159);
+    border: 2px solid rgb(255, 200, 200);
+    border-radius: 1em;
+    padding: 4px 22px ;
+    font-weight: bold;
+}
+#addBookButton:active{
+    background-color: rgb(255, 99, 99)
 }
