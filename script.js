@@ -36,8 +36,13 @@ function addBookToLibrary(book){
 
 // Add book list to the table
 function updateTable(library){
+
     let table = document.getElementById("bookList")
-    table.innerHTML = "";
+
+    // reset table
+    table.innerHTML = "";  
+
+    // populate table with the library array
     for (let i = 0; i < library.length; i++){
         let row = document.createElement("tr");
         let book = library[i];
@@ -47,6 +52,22 @@ function updateTable(library){
             row.appendChild(cell);
             console.log(book[key])
         }
+
+        //"Delete" button
+        let deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete"
+        deleteButton.setAttribute("class", "deleteButton")
+        deleteButton.setAttribute("type", "button")
+        deleteButton.setAttribute("data-index", i)
+
+        // button removes line using stored data-index
+        deleteButton.addEventListener("click", ()=>{
+            library.splice(i, 1)    
+            updateTable(library)
+        })
+        
+        row.appendChild(deleteButton);
+
         table.appendChild(row);
     }
 };
@@ -66,20 +87,20 @@ button.addEventListener("click", () => {
     // check for empty fields and prevent adding if any are missing
     if (!name || !author || !pages){
         
-        // get angry
+        // let customer-service brain off the leash
         let angry = document.getElementById("itemsRequired")
         angry.style.fontWeight = "bold";
         angry.style.color = "red";
         angry.style.fontSize = "300%";
         angry.style.textAlign = "center"
-        return
+        
+        // ensure pages is a number
+        if (!name || !author || isNaN(pages)){
+            alert("Please fill in all fields correctly")
+            return
+        }
     }
     
-    // ensure pages is a number
-    if (!name || !author || isNaN(pages)){
-        alert("Please fill in all fields correctly")
-        return
-    }
 
     // create a new book object and add it to myLibrary[]
     let book = new Book(name, author, pages, isRead);
