@@ -55,7 +55,7 @@ body{
 }
 .content{
     grid-area: 2/2/3/3;
-    background-color: rgb(230, 131, 131);
+    background-color: rgb(230, 235, 235);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -90,12 +90,12 @@ form{
 legend{
     text-align: center;
     padding: 0 20px;
-    border: 2px solid rgb(255, 200, 200);
+    border: 2px solid rgb(69, 128, 184);
     border-radius: 0.6em;
     font-family: system-ui;
 }
 .inputs{
-    border: 2px solid rgb(255, 200, 200);
+    border: 2px solid rgb(69, 128, 184);
     border-radius: 1.2em;
     margin: 0 auto;
     width: 80%;
@@ -106,12 +106,13 @@ legend{
 input{
     margin: 20px;
     border: none;
+    outline: 1px solid rgb(15, 1, 146);
     border-radius: 0.25em;
     padding-left: 8px;
 }
 
 input:focus{
-    outline: 2px solid rgb(15, 1, 146);
+    outline: 2px solid rgb(0, 159, 233);
 }
 
 #pagesField{
@@ -129,12 +130,17 @@ input[type=number]::-webkit-outer-spin-button {
 
 #addBookButton{
     color: white;
-    background-color: rgb(255, 159, 159);
-    border: 2px solid rgb(255, 200, 200);
+    background-color: rgb(49, 96, 141);
+    border: 2px solid rgb(52, 157, 255);
     border-radius: 1em;
     padding: 4px 22px ;
     font-weight: bold;
 }
 #addBookButton:active{
-    background-color: rgb(255, 99, 99)
+    background-color: rgb(54, 164, 197)
+}
+
+form>p{
+    margin-left: 2em;
+    font-size: 0.8em;
 }
