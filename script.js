@@ -4,24 +4,30 @@ const myLibrary = [
         title: "Holes",
         author: "Louis Sachar",
         pages: 233,
+        read: "Yes",
     },
     {
         title: "The Hobbit",
         author: "J.R.R. Tolkien",
         pages: 328,
+        read: "Yes",
+
     },
     {
         title: "The Eye of the World",
         author: "Robert Jordan",
         pages: 782,
+        read: "Yes",
+
     }
 ];
 
 // Book constructor
-function Book(title, author, pages){
+function Book(title, author, pages, read){
     this.title = title;
     this.author = author;
     this.pages = pages;
+    this.read = read;
 }
 
 function addBookToLibrary(book){
@@ -54,6 +60,7 @@ button.addEventListener("click", () => {
     let name = document.getElementById("nameField").value;
     let author = document.getElementById("authorField").value;
     let pages = document.getElementById("pagesField").value;
+    let isRead = document.getElementById("readField").value;
 
     
     // check for empty fields and prevent adding if any are missing
@@ -75,7 +82,7 @@ button.addEventListener("click", () => {
     }
 
     // create a new book object and add it to myLibrary[]
-    let book = new Book(name, author, pages);
+    let book = new Book(name, author, pages, isRead);
     myLibrary.push(book)
 
     updateTable(myLibrary)

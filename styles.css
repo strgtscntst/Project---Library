@@ -103,20 +103,30 @@ legend{
     flex-wrap: wrap;
     justify-content: center;
 }
-input{
-    margin: 20px;
+input, select{
+    margin: 12px;
+    padding-left: 6px;
     border: none;
-    outline: 1px solid rgb(15, 1, 146);
     border-radius: 0.25em;
-    padding-left: 8px;
+    outline: 1px solid rgb(15, 1, 146);
+    min-width: 70px;
+    background-color: white
 }
 
 input:focus{
     outline: 2px solid rgb(0, 159, 233);
 }
 
+#authorField{
+    max-width: 150px;
+}
+
 #pagesField{
     max-width: 90px;
+}
+
+#readField{
+    width: 100px;
 
 }
 
@@ -133,6 +143,7 @@ input[type=number]::-webkit-outer-spin-button {
     background-color: rgb(49, 96, 141);
     border: 2px solid rgb(52, 157, 255);
     border-radius: 1em;
+    margin-left: 20px;
     padding: 4px 22px ;
     font-weight: bold;
 }
