@@ -48,9 +48,23 @@ function updateTable(library){
         let book = library[i];
         for (let key in book){
             let cell = document.createElement("td");
-            cell.textContent = book[key];
+
+            if(key != "read"){
+                cell.textContent = book[key]
+            }else{  // In "Read" column, button toggles read status
+                let toggleButton = document.createElement("button");
+                toggleButton.textContent = book[key];
+                toggleButton.setAttribute("class", "toggleButton");
+                toggleButton.setAttribute("type", "button");
+                toggleButton.setAttribute("data-index", i)
+                toggleButton.addEventListener("click", () => {
+                    library[i]["read"] = (library[i]["read"] === "Yes") ? "No" : "Yes"
+                    updateTable(library)
+                })
+                cell.appendChild(toggleButton)
+            }
+
             row.appendChild(cell);
-            console.log(book[key])
         }
 
         //"Delete" button
